@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="@color/black"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="143dp"
+        android:layout_height="193dp"
+        android:contentDescription="@string/logo2"
+        android:src="@drawable/logo4"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:text="@string/welcome"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/client_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_text"
+        android:layout_marginTop="141dp"
+        android:text="@string/client"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/swifter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/client_button"
+        android:layout_marginTop="83dp"
+        android:text="@string/swifter"
+        android:textSize="16sp" />
+
+</RelativeLayout>
