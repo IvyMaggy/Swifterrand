@@ -1,5 +1,6 @@
 package com.example.swifterrand;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,11 @@ public class Sign_In extends AppCompatActivity {
      private EditText Password;
     private Button login;
      private DatabaseHelper dbHelper;
+    public void openHome(){
 
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +39,15 @@ public class Sign_In extends AppCompatActivity {
 
                 if (loginSuccessful) {
                     Toast.makeText(Sign_In.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    openHome();
                     // Perform appropriate actions (e.g., navigate to another activity)
                 } else {
                     Toast.makeText(Sign_In.this, "Invalid email or password.", Toast.LENGTH_SHORT).show();
                 }
             }
+
+
+
         });
     }
 }
