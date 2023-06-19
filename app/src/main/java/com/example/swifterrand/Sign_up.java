@@ -1,5 +1,6 @@
 package com.example.swifterrand;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ public class Sign_up extends AppCompatActivity {
      private EditText User_phone;
      private EditText City;
      private DatabaseHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class Sign_up extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String id_No = Id_Number.getText().toString();
                 String user_name = User_Name.getText().toString();
                 String email = Email_Address.getText().toString();
@@ -47,11 +50,19 @@ public class Sign_up extends AppCompatActivity {
                 long newRowId = dbHelper.insertUser(id_No,user_name,email,password,phone,city);
 
                 if (newRowId != -1) {
+                    openHome();
                     Toast.makeText(Sign_up.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(Sign_up.this, "Error registering user.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    public void openHome(){
+
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 }
